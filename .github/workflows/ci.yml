@@ -38,8 +38,7 @@ jobs:
         ls -la build/libs/
 
     - name: Build and Push Docker Image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      id: meta
+      uses: mr-smithers-excellent/docker-build-push@v6.4
       with:
         image: ${{ secrets.DOCKER_USERNAME }}/github-action
         registry: docker.io
