@@ -54,4 +54,4 @@ jobs:
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}  
 
     - name: Deploy to openshift
-      run: oc new-app --docker-image docker.io/uniwinux/github-action:latest -n uniwinux-dev                 
+      run: oc new-app --docker-image docker.io/uniwinux/github-action:latest -n uniwinux-dev || echo .>/dev/null                
