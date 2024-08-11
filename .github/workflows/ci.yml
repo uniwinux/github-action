@@ -45,6 +45,7 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: latest
 
     - name: Authenticate and set context
       uses: redhat-actions/oc-login@v1
@@ -54,4 +55,4 @@ jobs:
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}  
 
     - name: Deploy to openshift
-      run: oc new-app --docker-image docker.io/uniwinux/github-action:main-2e74ef0 -n uniwinux-dev                 
+      run: oc new-app --docker-image docker.io/uniwinux/github-action:latest -n uniwinux-dev                 
