@@ -9,6 +9,12 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  ENV: "dev"
+  OPENSHIFT_SERVER_URL: ${{ secrets.OPENSHIFT_DEV_SERVER_URL}}
+  OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_DEV_TOKEN }}
+  OPENSHIFT_NAMESPACE: ${{ secrets.OPENSHIFT_DEV_NAMESPACE }}    
+
 jobs:
   build-java:
 
